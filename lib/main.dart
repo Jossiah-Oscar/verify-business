@@ -1,0 +1,39 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+import 'package:instagram_verification_db/Screen/Home/homePage.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Wrapper(),
+    );
+  }
+}
+
+class Wrapper extends StatefulWidget {
+  const Wrapper({Key? key}) : super(key: key);
+
+  @override
+  _WrapperState createState() => _WrapperState();
+}
+
+class _WrapperState extends State<Wrapper> {
+  @override
+  Widget build(BuildContext context) {
+    return HomePage();
+  }
+}
