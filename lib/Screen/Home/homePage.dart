@@ -1,6 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,7 +25,31 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.amberAccent,
         actions: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              var headers = {
+                'Authorization': 'Bearer sk_oKuwiBKpfUDxWz',
+                'Content-Type': 'application/json'
+              };
+              var request = http.Request(
+                  'POST', Uri.parse('https://api.shoket.co/v1/charge/'));
+              request.body = json.encode({
+                "amount": "200",
+                "customer_name": "Jossiah Kibona",
+                "email": "jossiahoscar@gmail.com",
+                "number_used": "255742223432",
+                "channel": "Vodacom"
+              });
+              request.headers.addAll(headers);
+
+              http.StreamedResponse response = await request.send();
+
+              if (response.statusCode == 200) {
+                print(await response.stream.bytesToString());
+              } else {
+                print(response.statusCode);
+                print("object");
+              }
+            },
             child: Text(
               "Register Business",
             ),

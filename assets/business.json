@@ -1,6 +1,9 @@
 {
+    "businessID":"",
     "business name":"",
+    "instagram handle":"",
     "business location":"",
-    "established date":""
-    
+    "established date":"",
+    "verified":false,
+    "ownerID":""
 }
