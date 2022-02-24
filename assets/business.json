@@ -1,9 +1,10 @@
 {
-    "businessID":"",
-    "business name":"",
-    "instagram handle":"",
-    "business location":"",
-    "established date":"",
-    "verified":false,
-    "ownerID":""
+  "businessID": "",
+  "business name": "",
+  "business number": "",
+  "instagram handle": "",
+  "business location": "",
+  "established date": "",
+  "verified": false,
+  "ownerID": ""
 }
